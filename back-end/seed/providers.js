@@ -1,5 +1,6 @@
 const db = require('../db')
-const Provider = require('../models/provider')
+const { Provider } = require('../models/index')
+console.log(Provider)
 
 
 db.on('error', console.error.bind(console, 'MongoDB conection error'))
@@ -26,7 +27,7 @@ const main = async () => {
             details: 'the largest home improvement retailer in the United States, supplying tools, construction products, and services',
             url: 'https://www.homedepot.com/'
         }
-    ]
+    ];
 
     await Provider.insertMany(providers)
     console.log('Created providers')
