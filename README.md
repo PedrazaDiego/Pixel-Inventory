@@ -9,7 +9,7 @@
 This is an application meant for small businesses or individuals who wants to keep track of inventory on a small scale. 
 
 
-<img src="https://i.imgur.com/BV6u54L.png"> <img src="https://i.imgur.com/xReF5Dk.png"> <img src="https://i.imgur.com/69lIg1J.png"> <img src="https://i.imgur.com/pyFAvAM.png"> <img src="https://i.imgur.com/7o4xbdI.png">
+<img src="https://i.imgur.com/BV6u54L.png"/> <img src="https://i.imgur.com/xReF5Dk.png"/> <img src="https://i.imgur.com/69lIg1J.png"/> <img src="https://i.imgur.com/pyFAvAM.png"/> <img src="https://i.imgur.com/7o4xbdI.png"/>
 
 ![image1](https://mb.lowrysales.com/product/image/large/172490259_1.jpg) ~~placeholderimage~~
 
