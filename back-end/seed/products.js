@@ -1,5 +1,5 @@
 const db = require('../db')
-const { Product } = require('../models/index')
+const { Product, Provider } = require('../models/index')
 console.log(Product)
 
 
@@ -44,7 +44,7 @@ const main = async () => {
             category: 'Jewelry',
             description: "925 Silver Men's Ring Red Garnet Stone Vintage Handmade Turkish Ring for Women Rock Jewelry Christmas Gift for Women Gemstone",
             quantity: 'Each',
-            provider: aliExpress._id
+            provider: aliExpress[0]._id
         },
         {
             name: '20-Volt Cordless Compact Impact Driver',
@@ -52,7 +52,7 @@ const main = async () => {
             category: 'Tools',
             description: "MANEUVER WITH EASE: Compact, under 4 in. design for optimized ergonomics and access to difficult-to-reach spots",
             quantity: 'Each',
-            provider: homeDepot._id
+            provider: homeDepot[0]._id
         }
     ]
 

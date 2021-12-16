@@ -1,6 +1,5 @@
 const db = require('../db')
 const { Provider } = require('../models/index')
-console.log(Provider)
 
 
 db.on('error', console.error.bind(console, 'MongoDB conection error'))
@@ -23,7 +22,7 @@ const main = async () => {
             url: 'https://www.aliexpress.com/',
         },
         {
-            name: 'Home Depo',
+            name: 'Home Depot',
             details: 'the largest home improvement retailer in the United States, supplying tools, construction products, and services',
             url: 'https://www.homedepot.com/'
         }
