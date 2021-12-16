@@ -9,7 +9,7 @@ const Product = new Schema(
         description: String,
         quantity: String,
         provider: 
-            {type: Schema.Types.ObjectId, ref: 'providers'},
+            {type: Schema.Types.ObjectId, ref: 'provider_id'},
         history: 
             {type: Schema.Types.ObjectId, ref: 'logs'}
     },
