@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Products from './Products'
+import Products from '../subcomponents/Products'
 
 const BASE_URL = 'http://localhost:3001/api'
 
-export default function Inventory(props) {
+export default function Inventory() {
 
     const [products, updateProducts] = useState([])
 

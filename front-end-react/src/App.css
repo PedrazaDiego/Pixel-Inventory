@@ -34,8 +34,16 @@
 }
 
 .inventory-grid {
+    padding: 15px;
     display: grid;
     grid-template-columns: 33% 33% 33%;
     border: solid gray 1px;
     height: 100vh;
+    justify-content: center;
+}
+
+.grid-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

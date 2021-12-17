@@ -4,6 +4,8 @@ import { Route, Switch } from 'react-router-dom'
 import LeftBar from './bars/LeftBar';
 import RigthBar from './bars/RigthBar';
 import NavBar from './components/NavBar';
+import Inventory from './components/Inventory';
+import Categories from './components/Categories';
 
 function App() {
   return (
@@ -14,13 +16,7 @@ function App() {
       </div>
       <div className='right-bar'>
         <RigthBar />
-        <Switch>
-          <Route exact path="/" component={''} />
-          <Route path="/categories" component={''} />
-          <Route path="/providers" component={''} />
-        </Switch>
       </div>
-     
     </div>
   );
 }
