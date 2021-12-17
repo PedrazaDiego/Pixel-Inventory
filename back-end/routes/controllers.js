@@ -30,7 +30,9 @@ const postInventory = async (req, res) => {
 
 const postProvider = async (req, res) => {
     try {
-        const provider = await Provider.create(req, res)
+        const provider = await Provider.create(req.body)
+        console.log(req.body)
+        console.log(provider)
         await provider.save()
         return res.status(201).json({ provider })
     } catch (error) {
