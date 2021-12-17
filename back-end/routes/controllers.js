@@ -18,6 +18,22 @@ const getProviders = async (req, res) => {
     }
 }
 
+const getById = async (req, res) => {
+    try {
+        const { id } = req.params
+        const product = await Product.findById(id)
+        const provider = await Provider.findById(id)
+        if(product) {
+            return res.status(200).json({ product })
+        } else if(provider) {
+            return res.status(200).json({ provider })
+        }
+        return res.status(404).send('This does not exists')
+    } catch(error){
+        return res.status(500).send(error.message)
+    }
+}
+
 const postInventory = async (req, res) => {
     try {
         const item = await Product.create(req.body)
@@ -42,9 +58,11 @@ const postProvider = async (req, res) => {
 
 
 
+
 module.exports = {
     getInventory,
     getProviders,
+    getById,
     postInventory,
     postProvider,
 }
