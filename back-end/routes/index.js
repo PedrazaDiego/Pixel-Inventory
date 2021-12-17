@@ -12,6 +12,8 @@ router.get('/find/:id',controller.getById)
 router.post('/addinventory', controller.postInventory)
 router.post('/addprovider', controller.postProvider)
 
+router.put('/provider/:id', controller.putProvider)
+router.put('/inventory/:id', controller.putProduct)
 
 
 module.exports = router

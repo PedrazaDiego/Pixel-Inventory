@@ -56,7 +56,43 @@ const postProvider = async (req, res) => {
     }
 }
 
+const putProvider = async (req, res) => {
+    try {
+        const { id } = req.params
+        await Provider.findByIdAndUpdate(
+            id, req.body, { new: true }, (err, provider) => {
+                if(err) {
+                    res.status(500).send(err)
+                }
+                if(!provider) {
+                    res.status(500).send('Not found')
+                }
+                return res.status(200).json(provider)
+            }
+            ).clone().catch(err=> res.send(err))
+    }catch(error){
 
+    }
+}
+
+const putProduct = async (req, res) => {
+    try {
+        const { id } = req.params
+        await Product.findByIdAndUpdate(
+            id, req.body, { new: true }, (err, product) => {
+                if(err) {
+                    res.status(500).send(err)
+                }
+                if(!product) {
+                    res.status(500).send('Not found')
+                }
+                return res.status(200).json(product)
+            }
+            ).clone().catch(err=> res.send(err))
+    }catch(error){
+
+    }
+}
 
 
 module.exports = {
@@ -65,4 +101,6 @@ module.exports = {
     getById,
     postInventory,
     postProvider,
+    putProvider,
+    putProduct,
 }
