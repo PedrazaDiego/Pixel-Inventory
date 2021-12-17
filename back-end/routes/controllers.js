@@ -47,8 +47,6 @@ const postInventory = async (req, res) => {
 const postProvider = async (req, res) => {
     try {
         const provider = await Provider.create(req.body)
-        console.log(req.body)
-        console.log(provider)
         await provider.save()
         return res.status(201).json({ provider })
     } catch (error) {
@@ -94,6 +92,33 @@ const putProduct = async (req, res) => {
     }
 }
 
+const deleteProduct = async (req,res) => {
+    try {
+        const { id } = req.params
+        const delProduct = await Product.findByIdAndDelete(id)
+        if(delProduct) {
+            return res.status(200).send('Product deleted')
+        }
+        throw new Error('Product not found')
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
+}
+
+const deleteProvider = async (req, res) => {
+    try {
+        const { id } = req.params
+        const delProvider = await Provider.findByIdAndDelete(id)
+        if(delProvider) {
+            return res.status(200).send('Provider deleted')
+        }
+        throw new Error('Provider not found')
+    }catch(error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+
 
 module.exports = {
     getInventory,
@@ -103,4 +128,6 @@ module.exports = {
     postProvider,
     putProvider,
     putProduct,
+    deleteProduct,
+    deleteProvider,
 }
