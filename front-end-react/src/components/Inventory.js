@@ -4,7 +4,7 @@ import Products from '../subcomponents/Products'
 
 const BASE_URL = 'http://localhost:3001/api'
 
-export default function Inventory() {
+export default function Inventory(props) {
 
     const [products, updateProducts] = useState([])
 
@@ -27,6 +27,8 @@ export default function Inventory() {
                     <Products 
                         key={e._id}
                         name={e.name}
+                        {...products}
+                        onClick={() => props.history.push(`/${e._id}`)}
                     />
                 ))}
             </section>

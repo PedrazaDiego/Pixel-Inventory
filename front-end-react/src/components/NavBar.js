@@ -6,8 +6,8 @@ export default function NavBar() {
         <div>
             <nav className='nav-bar'>
                 <Link to='/'> Inventory </Link>
-                <Link to='/categories'> Categories </Link>
                 <Link to='/providers'> Providers </Link>
+                <Link to='/categories'> Categories </Link>
             </nav>
         </div>
     )

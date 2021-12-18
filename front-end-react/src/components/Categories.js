@@ -27,6 +27,7 @@ export default function Categories() {
                     <Category
                         key={e._id}
                         category={e.category}
+                        {...category}
                     />
                 ))}
             </section>

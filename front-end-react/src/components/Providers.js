@@ -4,7 +4,7 @@ import Vendor from '../subcomponents/Vendor'
 
 const BASE_URL = 'http://localhost:3001/api'
 
-export default function Providers() {
+export default function Providers(props) {
 
     const [providers, updateProviders] = useState([])
 
@@ -18,13 +18,22 @@ export default function Providers() {
         console.log(load.data.provider)
     }
 
+    // let filtered = [... new Set(providers.map(p => p.name))]
+    // console.log(filtered)
+    //filters the name but loses acces to the rest of the object
+    
+
     return (
         <div>
             <section className='inventory-grid'>
                 {providers.map( (e) =>(
+
                     <Vendor 
                         key={e._id}
                         name={e.name}
+                        {...providers}
+                        onClick={() => props.history.push(`/${e._id}`)}
+
                     />
                 ))}
             </section>
