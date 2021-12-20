@@ -18,12 +18,20 @@ export default function Details(props) {
 
     const loadDetails = async () => {
         const findDetails = await axios.get(`${BASE_URL}${props.match.params.id}`)
-        updateProductDetail(findDetails.data.product)
-        console.log(findDetails.data.product)
+        if (findDetails.data.product){
+            console.log('this is a product')
+            updateProductDetail(findDetails.data.product)
+        } else if (findDetails.data.provider){
+            console.log('this is a provider')
+            updateProductDetail(findDetails.data.provider)
+        }
+        
+        console.log(findDetails.data)
+        console.log(productDetail)
     }
 
-
-
+    
+    
 
 
     return (
