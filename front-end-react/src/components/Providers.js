@@ -15,7 +15,6 @@ export default function Providers(props) {
     const loadProviders = async () => {
         const load = await axios.get(`${BASE_URL}/providers`)
         updateProviders(load.data.provider)
-        console.log(load.data.provider)
     }
 
     // let filtered = [... new Set(providers.map(p => p.name))]

@@ -1,14 +1,17 @@
 import  React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import Edit from '../subcomponents/Edit'
 
 
-const BASE_URL = 'http://localhost:3001/api/find/'
-const BASE_INVENTORY = 'http://localhost:3001/api'
+const BASE_URL = 'http://localhost:3001/api/'
+
 
 
 export default function Details(props) {
 
     const [productDetail, updateProductDetail] = useState([])
+    const [productOrProvider, updatePorP] = useState('')
+    const [renderEdit, updateRenderEdit] = useState(false)
 
 
     useEffect(() =>{
@@ -17,21 +20,27 @@ export default function Details(props) {
 
 
     const loadDetails = async () => {
-        const findDetails = await axios.get(`${BASE_URL}${props.match.params.id}`)
+        const findDetails = await axios.get(`${BASE_URL}find/${props.match.params.id}`)
         if (findDetails.data.product){
             console.log('this is a product')
+            updatePorP('inventory')
             updateProductDetail(findDetails.data.product)
         } else if (findDetails.data.provider){
             console.log('this is a provider')
+            updatePorP('provider')
             updateProductDetail(findDetails.data.provider)
+            console.log(productOrProvider)
         }
-        
-        console.log(findDetails.data)
-        console.log(productDetail)
     }
 
+    const deletePro = async () => {
+        await axios.delete(`${BASE_URL}${productOrProvider}/${props.match.params.id}`)
+        console.log(`${productOrProvider} deleted`)
+    }
     
-    
+    const updatePro = () => {
+        updateRenderEdit(true)
+    }
 
 
     return (
@@ -45,8 +54,11 @@ export default function Details(props) {
                 <h5>Creation date: {productDetail.createdAt}</h5>
                 <h5>Update date: {productDetail.updatedAt}</h5>
 
-                <button>X</button>
-                <button>Edit</button>
+                <div>
+                    <button onClick={deletePro}>Delete</button>
+                    <button onClick={updatePro}>Edit</button>
+                    {renderEdit ? <Edit /> : null}
+                </div>
             </section>
         </div>
     )

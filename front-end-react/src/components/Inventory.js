@@ -15,8 +15,6 @@ export default function Inventory(props) {
     const loadInventory = async () => {
         const load = await axios.get(`${BASE_URL}/inventory`)
         updateProducts(load.data.inventory)
-        console.log(load)
-        console.log(load.data.inventory)
     }
 
 

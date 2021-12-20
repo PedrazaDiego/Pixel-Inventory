@@ -17,7 +17,6 @@ export default function Categories() {
     const getCategories = async () => {
         const load = await axios.get(`${BASE_URL}/inventory`)
         updateCategory(load.data.inventory)
-        console.log(load.data.inventory)
     }
 
     return (
