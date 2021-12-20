@@ -57,7 +57,7 @@ export default function Details(props) {
                 <div>
                     <button onClick={deletePro}>Delete</button>
                     <button onClick={updatePro}>Edit</button>
-                    {renderEdit ? <Edit /> : null}
+                    {renderEdit ? <Edit params={props.match.params.id}/> : null}
                 </div>
             </section>
         </div>
