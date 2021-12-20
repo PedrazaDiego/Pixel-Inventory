@@ -1,6 +1,7 @@
 import  React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Edit from '../subcomponents/Edit'
+import Edit1 from '../subcomponents/Edit1'
 
 
 const BASE_URL = 'http://localhost:3001/api/'
@@ -11,7 +12,7 @@ export default function Details(props) {
 
     const [productDetail, updateProductDetail] = useState([])
     const [productOrProvider, updatePorP] = useState('')
-    const [renderEdit, updateRenderEdit] = useState(false)
+    const [renderEdit, updateRenderEdit] = useState(null)
 
 
     useEffect(() =>{
@@ -39,7 +40,11 @@ export default function Details(props) {
     }
     
     const updatePro = () => {
-        updateRenderEdit(true)
+        if(productOrProvider === 'inventory'){
+            updateRenderEdit(0)
+        } else if(productOrProvider === 'provider'){
+            updateRenderEdit(1)
+        }
     }
 
 
@@ -57,7 +62,8 @@ export default function Details(props) {
                 <div>
                     <button onClick={deletePro}>Delete</button>
                     <button onClick={updatePro}>Edit</button>
-                    {renderEdit ? <Edit params={props.match.params.id}/> : null}
+                    {renderEdit === 0 ? <Edit params={props.match.params.id}/> : null}
+                    {renderEdit === 1 ? <Edit1 params={props.match.params.id}/> : null}
                 </div>
             </section>
         </div>

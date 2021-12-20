@@ -7,8 +7,11 @@ export default function Edit(props) {
 
     const [value, updateValue] = useState({
         name: '',
+        cost: '',
         price: '',
-        description: ''
+        category: '',
+        description: '',
+        quantity: '',
     })
 
     const handleChange = (e) => {
