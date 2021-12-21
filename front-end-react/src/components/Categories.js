@@ -22,7 +22,7 @@ export default function Categories() {
  
     return (
         <div>
-            <section className='inventory-grid'>
+            <section className='category-list'>
                 {newCategories.map( (e, e2) => (
                     <Category 
                         key={e2}

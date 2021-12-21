@@ -38,7 +38,7 @@ export default function Edit1(props) {
                     />
                 </div>
                 <div>
-                    <input
+                    <textarea
                         type='text'
                         value={value.details}
                         onChange={handleChange}

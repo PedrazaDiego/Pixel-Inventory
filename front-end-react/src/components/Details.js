@@ -34,6 +34,10 @@ export default function Details(props) {
         }
     }
 
+    const confirmation = () => {
+        updateRenderEdit(2)
+    }
+
     const deletePro = async () => {
         await axios.delete(`${BASE_URL}${productOrProvider}/${props.match.params.id}`)
         console.log(`${productOrProvider} deleted`)
@@ -50,22 +54,23 @@ export default function Details(props) {
 
     return (
         <div className='details'>
-            <section >
                 <h1>{productDetail.name}</h1>
                 {productDetail.price ? <span>${productDetail.price} / {productDetail.quantity}</span> : ''}
                 {productDetail.description ? <p> Description: {productDetail.description}</p> : ''}
 
                 {productDetail.provider ? <h5>Provider: {productDetail.provider}</h5> : ''}
-                <h5>Creation date: {productDetail.createdAt}</h5>
-                <h5>Update date: {productDetail.updatedAt}</h5>
+                <h5>
+                    Creation date: {productDetail.createdAt}/
+                    Update date: {productDetail.updatedAt}
+                </h5>
 
                 <div>
-                    <button onClick={deletePro}>Delete</button>
-                    <button onClick={updatePro}>Edit</button>
+                    <button onClick={confirmation} id='delete'>.</button>
+                    {renderEdit === 2 ? <button onClick={deletePro}> Confirm Deletion </button> : null}
+                    <button onClick={updatePro} id='edit'>.</button>
                     {renderEdit === 0 ? <Edit params={props.match.params.id}/> : null}
                     {renderEdit === 1 ? <Edit1 params={props.match.params.id}/> : null}
                 </div>
-            </section>
         </div>
     )
 }

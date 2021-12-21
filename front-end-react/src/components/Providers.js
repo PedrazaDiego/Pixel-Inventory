@@ -21,7 +21,7 @@ export default function Providers(props) {
     // console.log(filtered)
     //filters the name but loses acces to the rest of the object
     
-
+    console.log(providers)
     return (
         <div>
             <section className='inventory-grid'>
@@ -32,8 +32,8 @@ export default function Providers(props) {
                         name={e.name}
                         {...providers}
                         onClick={() => props.history.push(`/${e._id}`)}
-
                     />
+                    
                 ))}
             </section>
         </div>

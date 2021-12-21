@@ -68,7 +68,7 @@ export default function Edit(props) {
                     />
                 </div>
                 <div>
-                    <input
+                    <textarea
                     type="text"
                     value={value.description}
                     onChange={handleChange}
