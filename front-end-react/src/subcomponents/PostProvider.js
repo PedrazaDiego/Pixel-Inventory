@@ -35,7 +35,7 @@ export default function PostProvider(props) {
                     />
                 </div>
                 <div>
-                    <input
+                    <textarea
                         type='text'
                         value={value.details}
                         onChange={handleChange}
@@ -52,7 +52,7 @@ export default function PostProvider(props) {
                         placeholder='provider url'
                     />
                 </div>
-            <button>Submit</button> 
+            <button id='save'>.</button> 
             </form>
             
         </div>

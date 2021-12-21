@@ -22,7 +22,7 @@ export default function Edit(props) {
     }
 
     const submitUpdate = async (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         await axios.put(`${BASE_URL}inventory/${props.params}`, value)
     }
 
@@ -95,7 +95,7 @@ export default function Edit(props) {
                     /> */}
                 </div>
   
-            <button>Submit</button>
+            <button id='save'>.</button>
             </form>
         </div>
     )

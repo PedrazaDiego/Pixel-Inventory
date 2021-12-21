@@ -30,7 +30,6 @@ export default function Details(props) {
             console.log('this is a provider')
             updatePorP('provider')
             updateProductDetail(findDetails.data.provider)
-            console.log(productOrProvider)
         }
     }
 
@@ -41,6 +40,7 @@ export default function Details(props) {
     const deletePro = async () => {
         await axios.delete(`${BASE_URL}${productOrProvider}/${props.match.params.id}`)
         console.log(`${productOrProvider} deleted`)
+        props.history.push(`/`)
     }
     
     const updatePro = () => {
@@ -53,24 +53,26 @@ export default function Details(props) {
 
 
     return (
-        <div className='details'>
-                <h1>{productDetail.name}</h1>
-                {productDetail.price ? <span>${productDetail.price} / {productDetail.quantity}</span> : ''}
-                {productDetail.description ? <p> Description: {productDetail.description}</p> : ''}
-
-                {productDetail.provider ? <h5>Provider: {productDetail.provider}</h5> : ''}
-                <h5>
-                    Creation date: {productDetail.createdAt}/
-                    Update date: {productDetail.updatedAt}
-                </h5>
-
-                <div>
-                    <button onClick={confirmation} id='delete'>.</button>
-                    {renderEdit === 2 ? <button onClick={deletePro}> Confirm Deletion </button> : null}
-                    <button onClick={updatePro} id='edit'>.</button>
-                    {renderEdit === 0 ? <Edit params={props.match.params.id}/> : null}
-                    {renderEdit === 1 ? <Edit1 params={props.match.params.id}/> : null}
-                </div>
+        <div className='details'>     
+            <h1>{productDetail.name}</h1>
+            {productDetail.cost ? <span >Cost: {productDetail.cost}</span> : ''}
+            {productDetail.price ? <span >Price: <img src='https://i.imgur.com/aQeGwOX.png' width={20}/> {productDetail.price} / {productDetail.quantity}</span> : ''}
+            {productDetail.category ? <h3 >Category: {productDetail.category}</h3> : ''}
+            {productDetail.description ? <p > Description: {productDetail.description}</p> : ''}
+            {productDetail.provider ? <h4 >Provider: {productDetail.provider}</h4> : ''}
+            {productDetail.details ? <p>Details: {productDetail.details}</p> : ''}
+            {productDetail.url ? <p>Web Page: {<a href={`${productDetail.url}`}> {productDetail.name}</a>}</p> : ''}
+            <h5>
+                Creation date: {productDetail.createdAt}/
+                Update date: {productDetail.updatedAt}
+            </h5>
+            <div>
+                <button onClick={confirmation} id='delete'>.</button>
+                {renderEdit === 2 ? <button onClick={deletePro}> Confirm Deletion </button> : null}
+                <button onClick={updatePro} id='edit'>.</button>
+                {renderEdit === 0 ? <Edit params={props.match.params.id}/> : null}
+                {renderEdit === 1 ? <Edit1 params={props.match.params.id}/> : null}
+            </div>
         </div>
     )
 }

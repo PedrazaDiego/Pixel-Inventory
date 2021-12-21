@@ -16,12 +16,7 @@ export default function Providers(props) {
         const load = await axios.get(`${BASE_URL}/providers`)
         updateProviders(load.data.provider)
     }
-
-    // let filtered = [... new Set(providers.map(p => p.name))]
-    // console.log(filtered)
-    //filters the name but loses acces to the rest of the object
-    
-    console.log(providers)
+  
     return (
         <div>
             <section className='inventory-grid'>

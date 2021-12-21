@@ -66,6 +66,7 @@ a:link {
     flex-direction: column;
     justify-content: center;
     border: solid black 1px;
+    border-radius: 4px;
 }
 
 .edit-form {
@@ -128,10 +129,6 @@ textarea {
     margin: 2px;
 }
 
-p {
-    color: #e7e7e7;
-}
-
 h5{
     color: #e7e7e7;
 }
@@ -149,4 +146,14 @@ h5{
 }
 img {
     image-rendering: pixelated;
+}
+
+#save {
+    background: url(https://i.imgur.com/UglpdfE.png);
+    width: 32px;
+    height: 32px;
+}
+
+.sub {
+    color: red;
 }

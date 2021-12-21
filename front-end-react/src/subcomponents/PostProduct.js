@@ -6,13 +6,13 @@ const BASE_URL = 'http://localhost:3001/api/'
 export default function PostProduct(props) {
 
     const [value, updateValue] = useState({
-       name: '',
-       cost: '',
-       price: '',
-       category: '',
-       description: '',
-       quantity: '',
-    //    provider: '', 
+       name: undefined,
+       cost: undefined,
+       price: undefined,
+       category: undefined,
+       description: undefined,
+       quantity: undefined,
+    //    provider: undefined, 
     })
 
     const handleChange = (e) => {
@@ -67,7 +67,7 @@ export default function PostProduct(props) {
                     />
                 </div>
                 <div>
-                    <input 
+                    <textarea 
                         text='text'
                         value={value.description}
                         onChange={handleChange}
@@ -93,7 +93,7 @@ export default function PostProduct(props) {
                         placeholder='provider'
                     /> */}
                 </div>
-            <button>Submit</button>
+            <button id='save'>.</button>
             </form>
         </div>
     )

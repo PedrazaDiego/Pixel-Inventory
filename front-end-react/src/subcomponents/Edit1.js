@@ -19,7 +19,7 @@ export default function Edit1(props) {
     }
 
     const submitUpdate = async (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         await axios.put(`${BASE_URL}provider/${props.params}`, value)
     }
 
@@ -55,7 +55,7 @@ export default function Edit1(props) {
                         placeholder='update url'
                     />
                 </div>
-            <button>Submit</button> 
+            <button id='save'>.</button> 
             </form>
         </div>
     )

@@ -1,11 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom'
 import LeftBar from './bars/LeftBar';
 import RigthBar from './bars/RigthBar';
-import NavBar from './components/NavBar';
-import Inventory from './components/Inventory';
-import Categories from './components/Categories';
+
 
 function App() {
   return (
