@@ -49,8 +49,8 @@ export default function Details(props) {
 
 
     return (
-        <div>
-            <section className='details'>
+        <div className='details'>
+            <section >
                 <h1>{productDetail.name}</h1>
                 {productDetail.price ? <span>${productDetail.price} / {productDetail.quantity}</span> : ''}
                 {productDetail.description ? <p> Description: {productDetail.description}</p> : ''}

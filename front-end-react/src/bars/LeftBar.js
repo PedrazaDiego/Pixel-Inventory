@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import axios from 'axios'
 import PostProduct from '../subcomponents/PostProduct'
 import PostProvider from '../subcomponents/PostProvider'
 
@@ -13,7 +12,10 @@ const [conditional, updateConditional] = useState(null)
 
 
     return (
-        <div>
+        <div className='inventory-bar'>
+            <div>
+                <h2>This is your inventory</h2>
+            </div>
             <div>
                 <h2>Add to your inventory: </h2>
             </div>

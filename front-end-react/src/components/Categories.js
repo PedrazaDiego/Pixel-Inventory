@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Vendor from '../subcomponents/Vendor'
 import Category from '../subcomponents/Category'
 
 const BASE_URL = 'http://localhost:3001/api'
