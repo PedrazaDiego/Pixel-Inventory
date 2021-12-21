@@ -18,17 +18,27 @@ export default function Categories() {
         updateCategory(load.data.inventory)
     }
 
+    const newCategories = [...new Set(category.map(c => c.category))]
+ 
     return (
         <div>
             <section className='inventory-grid'>
-                {category.map( (e) => (
-                    <Category
-                        key={e._id}
-                        category={e.category}
-                        {...category}
+                {newCategories.map( (e, e2) => (
+                    <Category 
+                        key={e2}
+                        category={e}
                     />
-                ))}
+                    ))}
             </section>
         </div>
     )
 }
+
+
+// {category.map( (e) => (
+//     <Category
+//         key={e._id}
+//         category={e.category}
+//         {...category}
+//     />
+// ))}
