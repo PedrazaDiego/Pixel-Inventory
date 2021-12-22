@@ -2,10 +2,10 @@ import  React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Edit from '../subcomponents/Edit'
 import Edit1 from '../subcomponents/Edit1'
-import {BASE_URL} from '../globals'
+import {BASE_URL} from '../globals/globals'
 
 
-BASE_URL = 'http://localhost:3001/api/'
+
 
 
 

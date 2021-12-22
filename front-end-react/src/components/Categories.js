@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Category from '../subcomponents/Category'
-import {BASE_URL} from '../globals'
+import { BASE_URL } from '../globals/globals'
 
-BASE_URL = 'http://localhost:3001/api'
+
 
 
 export default function Categories() {
