@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Products from '../subcomponents/Products'
+import {BASE_URL} from '../globals'
 
-const BASE_URL = 'http://localhost:3001/api'
+BASE_URL = 'http://localhost:3001/api'
 
 export default function Inventory(props) {
 

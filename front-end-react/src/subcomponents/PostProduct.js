@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import {BASE_URL} from '../globals'
 
-const BASE_URL = 'http://localhost:3001/api/'
+BASE_URL = 'http://localhost:3001/api/'
 
 export default function PostProduct(props) {
 
