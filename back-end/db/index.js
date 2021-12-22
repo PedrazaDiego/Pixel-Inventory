@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
-require('dotenv').config()
+const { path } = require('../models/provider')
+require('dotenv').config({path: '../.env'})
 
-// let MONGODB_URI = 'mongodb://127.0.0.1:27017/inventoryDatabase'
-let MONGODB_URI='mongodb+srv://<username>:pedraza@<cluster>.i57hr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+let MONGODB_URI = process.env.NODE_ENV === 'production' ? process.env.MONGODB_URI : 'mongodb://127.0.0.1:27017/inventoryDatabase'
+
+
 
 
 mongoose
