@@ -1,15 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
 const BASE_URL = 'http://localhost:3001/api/'
 
 export default function Edit1(props) {
 
+    
     const [value, updateValue] = useState({
         name: '',
         details: '',
         url: '',
     })
+
 
     const handleChange = (e) => {
         updateValue({
@@ -21,6 +23,7 @@ export default function Edit1(props) {
     const submitUpdate = async (e) => {
         // e.preventDefault()
         await axios.put(`${BASE_URL}provider/${props.params}`, value)
+        props.history.push(`/`)
     }
 
 

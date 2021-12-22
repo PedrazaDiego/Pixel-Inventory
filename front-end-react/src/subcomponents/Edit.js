@@ -24,6 +24,7 @@ export default function Edit(props) {
     const submitUpdate = async (e) => {
         // e.preventDefault()
         await axios.put(`${BASE_URL}inventory/${props.params}`, value)
+        props.history.push(`/`)
     }
 
 
