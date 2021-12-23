@@ -14,12 +14,11 @@ const [conditional, updateConditional] = useState(null)
     return (
         <div className='inventory-bar'>
             <div>
-                <h2></h2>
-                <img src="https://i.imgur.com/7o4xbdI.png"/> 
-                <img src="https://i.imgur.com/pyFAvAM.png"/> 
-                <img src="https://i.imgur.com/69lIg1J.png"/> 
-                <img src="https://i.imgur.com/xReF5Dk.png"/> 
-                <img src="https://i.imgur.com/BV6u54L.png"/>
+                <img src="https://i.imgur.com/7o4xbdI.png" alt='pixel-fish'/> 
+                <img src="https://i.imgur.com/pyFAvAM.png" alt='pixel-sunflower'/> 
+                <img src="https://i.imgur.com/69lIg1J.png" alt='pixel-carrot'/> 
+                <img src="https://i.imgur.com/xReF5Dk.png" alt='pixel-apple'/> 
+                <img src="https://i.imgur.com/BV6u54L.png" alt='pixel-meat'/>
             </div>
             <div>
                 <h2>Add to your inventory: </h2>
