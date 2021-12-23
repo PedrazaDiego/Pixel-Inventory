@@ -11,11 +11,16 @@ This is an application meant for small businesses or individuals who wants to ke
 
 <img src="https://i.imgur.com/BV6u54L.png"/> <img src="https://i.imgur.com/xReF5Dk.png"/> <img src="https://i.imgur.com/69lIg1J.png"/> <img src="https://i.imgur.com/pyFAvAM.png"/> <img src="https://i.imgur.com/7o4xbdI.png"/>
 
-![image1](https://mb.lowrysales.com/product/image/large/172490259_1.jpg) ~~placeholderimage~~
+Created using: 
+React, MongoDB, Node.js, Express, Mongoose.
+
+![image1](https://i.imgur.com/NJrBD15.png)
+![image2](https://i.imgur.com/PcAYb0W.png)
+![image3](https://i.imgur.com/WP7WX1H.png)
 
 ## Getting started
 * fork and clone this repository
-* cd into the directory on your local machine
+* cd into the directory on your local machine and run npm i to install dependencies 
 
 
 <img src="https://i.imgur.com/7o4xbdI.png"> <img src="https://i.imgur.com/pyFAvAM.png"> <img src="https://i.imgur.com/69lIg1J.png"> <img src="https://i.imgur.com/xReF5Dk.png"> <img src="https://i.imgur.com/BV6u54L.png">
