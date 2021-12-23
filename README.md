@@ -31,3 +31,7 @@ React, MongoDB, Node.js, Express, Mongoose.
 
 * Categories
 * Vendors
+
+
+# Credits: 
+pixel icon pack: https://franuka.itch.io/rpg-icon-pack-demo
